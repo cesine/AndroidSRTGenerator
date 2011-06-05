@@ -1,0 +1,438 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 25.126893424036282 
+tiers? <exists> 
+size = 5 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "silencesGeneratedByPraatDefaults" 
+        xmin = 0 
+        xmax = 25.126893424036282 
+        intervals: size = 31 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.3394467120181415 
+            text = "silent" 
+        intervals [2]:
+            xmin = 2.3394467120181415 
+            xmax = 2.459446712018141 
+            text = "sounding" 
+        intervals [3]:
+            xmin = 2.459446712018141 
+            xmax = 2.6434467120181413 
+            text = "silent" 
+        intervals [4]:
+            xmin = 2.6434467120181413 
+            xmax = 4.979446712018142 
+            text = "sounding" 
+        intervals [5]:
+            xmin = 4.979446712018142 
+            xmax = 5.131446712018141 
+            text = "silent" 
+        intervals [6]:
+            xmin = 5.131446712018141 
+            xmax = 7.419446712018141 
+            text = "sounding" 
+        intervals [7]:
+            xmin = 7.419446712018141 
+            xmax = 7.995446712018142 
+            text = "silent" 
+        intervals [8]:
+            xmin = 7.995446712018142 
+            xmax = 8.595446712018141 
+            text = "sounding" 
+        intervals [9]:
+            xmin = 8.595446712018141 
+            xmax = 8.81144671201814 
+            text = "silent" 
+        intervals [10]:
+            xmin = 8.81144671201814 
+            xmax = 9.77944671201814 
+            text = "sounding" 
+        intervals [11]:
+            xmin = 9.77944671201814 
+            xmax = 9.97144671201814 
+            text = "silent" 
+        intervals [12]:
+            xmin = 9.97144671201814 
+            xmax = 10.53944671201814 
+            text = "sounding" 
+        intervals [13]:
+            xmin = 10.53944671201814 
+            xmax = 10.707446712018141 
+            text = "silent" 
+        intervals [14]:
+            xmin = 10.707446712018141 
+            xmax = 11.82744671201814 
+            text = "sounding" 
+        intervals [15]:
+            xmin = 11.82744671201814 
+            xmax = 11.931446712018142 
+            text = "silent" 
+        intervals [16]:
+            xmin = 11.931446712018142 
+            xmax = 13.267446712018142 
+            text = "sounding" 
+        intervals [17]:
+            xmin = 13.267446712018142 
+            xmax = 13.37944671201814 
+            text = "silent" 
+        intervals [18]:
+            xmin = 13.37944671201814 
+            xmax = 13.771446712018141 
+            text = "sounding" 
+        intervals [19]:
+            xmin = 13.771446712018141 
+            xmax = 14.515446712018141 
+            text = "silent" 
+        intervals [20]:
+            xmin = 14.515446712018141 
+            xmax = 16.59544671201814 
+            text = "sounding" 
+        intervals [21]:
+            xmin = 16.59544671201814 
+            xmax = 16.899446712018143 
+            text = "silent" 
+        intervals [22]:
+            xmin = 16.899446712018143 
+            xmax = 17.131446712018143 
+            text = "sounding" 
+        intervals [23]:
+            xmin = 17.131446712018143 
+            xmax = 17.347446712018144 
+            text = "silent" 
+        intervals [24]:
+            xmin = 17.347446712018144 
+            xmax = 17.539446712018144 
+            text = "sounding" 
+        intervals [25]:
+            xmin = 17.539446712018144 
+            xmax = 18.027446712018143 
+            text = "silent" 
+        intervals [26]:
+            xmin = 18.027446712018143 
+            xmax = 18.291446712018143 
+            text = "sounding" 
+        intervals [27]:
+            xmin = 18.291446712018143 
+            xmax = 18.411446712018144 
+            text = "silent" 
+        intervals [28]:
+            xmin = 18.411446712018144 
+            xmax = 19.699446712018144 
+            text = "sounding" 
+        intervals [29]:
+            xmin = 19.699446712018144 
+            xmax = 19.923446712018144 
+            text = "silent" 
+        intervals [30]:
+            xmin = 19.923446712018144 
+            xmax = 20.387446712018143 
+            text = "sounding" 
+        intervals [31]:
+            xmin = 20.387446712018143 
+            xmax = 25.126893424036282 
+            text = "silent" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "silencesCorrected" 
+        xmin = 0 
+        xmax = 25.126893424036282 
+        intervals: size = 15 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.3394467120181415 
+            text = "silent" 
+        intervals [2]:
+            xmin = 2.3394467120181415 
+            xmax = 7.419446712018141 
+            text = "sounding" 
+        intervals [3]:
+            xmin = 7.419446712018141 
+            xmax = 7.862416565126602 
+            text = "silent" 
+        intervals [4]:
+            xmin = 7.862416565126602 
+            xmax = 9.886948106517972 
+            text = "sounding" 
+        intervals [5]:
+            xmin = 9.886948106517972 
+            xmax = 9.953546717459218 
+            text = "silent" 
+        intervals [6]:
+            xmin = 9.953546717459218 
+            xmax = 10.556634138760515 
+            text = "sounding" 
+        intervals [7]:
+            xmin = 10.556634138760515 
+            xmax = 10.707446712018141 
+            text = "silent" 
+        intervals [8]:
+            xmin = 10.707446712018141 
+            xmax = 11.82744671201814 
+            text = "sounding" 
+        intervals [9]:
+            xmin = 11.82744671201814 
+            xmax = 11.931446712018142 
+            text = "silent" 
+        intervals [10]:
+            xmin = 11.931446712018142 
+            xmax = 13.771446712018141 
+            text = "sounding" 
+        intervals [11]:
+            xmin = 13.771446712018141 
+            xmax = 14.515446712018141 
+            text = "silent" 
+        intervals [12]:
+            xmin = 14.515446712018141 
+            xmax = 17.539446712018144 
+            text = "sounding" 
+        intervals [13]:
+            xmin = 17.539446712018144 
+            xmax = 18.027446712018143 
+            text = "silent" 
+        intervals [14]:
+            xmin = 18.027446712018143 
+            xmax = 20.81346350848305 
+            text = "sounding" 
+        intervals [15]:
+            xmin = 20.81346350848305 
+            xmax = 25.126893424036282 
+            text = "silent" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "silencesConservative" 
+        xmin = 0 
+        xmax = 25.126893424036282 
+        intervals: size = 7 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.3394467120181415 
+            text = "silent" 
+        intervals [2]:
+            xmin = 2.3394467120181415 
+            xmax = 7.419446712018141 
+            text = "sounding" 
+        intervals [3]:
+            xmin = 7.419446712018141 
+            xmax = 7.862416565126602 
+            text = "silent" 
+        intervals [4]:
+            xmin = 7.862416565126602 
+            xmax = 13.771446712018141 
+            text = "sounding" 
+        intervals [5]:
+            xmin = 13.771446712018141 
+            xmax = 14.515446712018141 
+            text = "silent" 
+        intervals [6]:
+            xmin = 14.515446712018141 
+            xmax = 20.81346350848305 
+            text = "sounding" 
+        intervals [7]:
+            xmin = 20.81346350848305 
+            xmax = 25.126893424036282 
+            text = "silent" 
+    item [4]:
+        class = "IntervalTier" 
+        name = "Utterances" 
+        xmin = 0 
+        xmax = 25.126893424036282 
+        intervals: size = 17 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.3295300591518635 
+            text = "" 
+        intervals [2]:
+            xmin = 2.3295300591518635 
+            xmax = 3.682904800672018 
+            text = "speech recognition" 
+        intervals [3]:
+            xmin = 3.682904800672018 
+            xmax = 4.560415520173796 
+            text = "also known as" 
+        intervals [4]:
+            xmin = 4.560415520173796 
+            xmax = 5.875112700245168 
+            text = "automatic speech recognition" 
+        intervals [5]:
+            xmin = 5.875112700245168 
+            xmax = 7.419446712018141 
+            text = "or computer speech recognition" 
+        intervals [6]:
+            xmin = 7.419446712018141 
+            xmax = 7.942134695677491 
+            text = "" 
+        intervals [7]:
+            xmin = 7.942134695677491 
+            xmax = 8.629621224964106 
+            text = "converts" 
+        intervals [8]:
+            xmin = 8.629621224964106 
+            xmax = 9.882584292113412 
+            text = "spoken words to text" 
+        intervals [9]:
+            xmin = 9.882584292113412 
+            xmax = 10.633488987408464 
+            text = "the term" 
+        intervals [10]:
+            xmin = 10.633488987408464 
+            xmax = 11.87542258822108 
+            text = "voice recognition" 
+        intervals [11]:
+            xmin = 11.87542258822108 
+            xmax = 13.783244401267233 
+            text = "is sometimes used to refer to" 
+        intervals [12]:
+            xmin = 13.783244401267233 
+            xmax = 14.515446712018141 
+            text = "" 
+        intervals [13]:
+            xmin = 14.515446712018141 
+            xmax = 15.87649437174575 
+            text = "uh recognition systems" 
+        intervals [14]:
+            xmin = 15.87649437174575 
+            xmax = 17.539446712018144 
+            text = "that may be trained to a particular speaker" 
+        intervals [15]:
+            xmin = 17.539446712018144 
+            xmax = 18.027446712018143 
+            text = "" 
+        intervals [16]:
+            xmin = 18.027446712018143 
+            xmax = 20.813504587468945 
+            text = "as is the case for most desktop recognition software" 
+        intervals [17]:
+            xmin = 20.813504587468945 
+            xmax = 25.126893424036282 
+            text = "" 
+    item [5]:
+        class = "IntervalTier" 
+        name = "ProsodicCues" 
+        xmin = 0 
+        xmax = 25.126893424036282 
+        intervals: size = 30 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.3295300591518635 
+            text = "" 
+        intervals [2]:
+            xmin = 2.3295300591518635 
+            xmax = 3.253089222659766 
+            text = "" 
+        intervals [3]:
+            xmin = 3.253089222659766 
+            xmax = 3.7273533699328403 
+            text = "lengthened vowel,pitch,pause" 
+        intervals [4]:
+            xmin = 3.7273533699328403 
+            xmax = 4.298123707825347 
+            text = "" 
+        intervals [5]:
+            xmin = 4.298123707825347 
+            xmax = 4.560415520173796 
+            text = "lengthened vowel" 
+        intervals [6]:
+            xmin = 4.560415520173796 
+            xmax = 4.679295354517906 
+            text = "glottalization" 
+        intervals [7]:
+            xmin = 4.679295354517906 
+            xmax = 5.662072466099156 
+            text = "" 
+        intervals [8]:
+            xmin = 5.662072466099156 
+            xmax = 5.875112700245168 
+            text = "upspeak" 
+        intervals [9]:
+            xmin = 5.875112700245168 
+            xmax = 6.175578492835713 
+            text = "lengthened vowel" 
+        intervals [10]:
+            xmin = 6.175578492835713 
+            xmax = 7.229506888513343 
+            text = "" 
+        intervals [11]:
+            xmin = 7.229506888513343 
+            xmax = 7.419446712018141 
+            text = "upspeak" 
+        intervals [12]:
+            xmin = 7.419446712018141 
+            xmax = 7.942134695677491 
+            text = "" 
+        intervals [13]:
+            xmin = 7.942134695677491 
+            xmax = 8.34124570251928 
+            text = "" 
+        intervals [14]:
+            xmin = 8.34124570251928 
+            xmax = 8.629621224964106 
+            text = "lengthened s" 
+        intervals [15]:
+            xmin = 8.629621224964106 
+            xmax = 9.882584292113412 
+            text = "falling pitch?" 
+        intervals [16]:
+            xmin = 9.882584292113412 
+            xmax = 10.366716516303912 
+            text = "" 
+        intervals [17]:
+            xmin = 10.366716516303912 
+            xmax = 10.691344249993646 
+            text = "lengthened m, pause" 
+        intervals [18]:
+            xmin = 10.691344249993646 
+            xmax = 11.556159741956078 
+            text = "" 
+        intervals [19]:
+            xmin = 11.556159741956078 
+            xmax = 11.907469207181956 
+            text = "lengthened n, glottalization, pause" 
+        intervals [20]:
+            xmin = 11.907469207181956 
+            xmax = 12.152051746263261 
+            text = "glottalization" 
+        intervals [21]:
+            xmin = 12.152051746263261 
+            xmax = 13.388305307437864 
+            text = "" 
+        intervals [22]:
+            xmin = 13.388305307437864 
+            xmax = 14.515446712018141 
+            text = "lengthened vowel, glottalization, pause" 
+        intervals [23]:
+            xmin = 14.515446712018141 
+            xmax = 14.813344176488478 
+            text = "uh" 
+        intervals [24]:
+            xmin = 14.813344176488478 
+            xmax = 15.875356956033182 
+            text = "no cue" 
+        intervals [25]:
+            xmin = 15.875356956033182 
+            xmax = 16.071022987298225 
+            text = "glottalization" 
+        intervals [26]:
+            xmin = 16.071022987298225 
+            xmax = 17.36064001154511 
+            text = "" 
+        intervals [27]:
+            xmin = 17.36064001154511 
+            xmax = 18.027446712018143 
+            text = "lengthened vowel, glottalization, pause, breath" 
+        intervals [28]:
+            xmin = 18.027446712018143 
+            xmax = 19.370448523865726 
+            text = "" 
+        intervals [29]:
+            xmin = 19.370448523865726 
+            xmax = 20.813504587468945 
+            text = "glottalization" 
+        intervals [30]:
+            xmin = 20.813504587468945 
+            xmax = 25.126893424036282 
+            text = "" 
