@@ -1,0 +1,15 @@
+1
+00:00:02,329 --> 00:00:07,419
+Speech recognition, (also known as automatic speech recognition or computer speech recognition)
+
+2
+00:00:07,942 --> 00:00:13,783
+converts spoken words to text. The term "voice recognition" is sometimes used to refer to 
+
+3
+00:00:14,515 --> 00:00:17,539
+recognition systems that must be trained to a particular speaker,
+
+4
+00:00:18,027 --> 00:00:20,813
+as is the case for most desktop recognition software.
