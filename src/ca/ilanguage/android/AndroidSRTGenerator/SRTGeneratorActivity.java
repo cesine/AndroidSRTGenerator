@@ -1,4 +1,4 @@
-package com.openlanguage.android.AndroidSRTGenerator;
+package ca.ilanguage.android.AndroidSRTGenerator;
 
 import android.app.Activity;
 import android.os.Bundle;
