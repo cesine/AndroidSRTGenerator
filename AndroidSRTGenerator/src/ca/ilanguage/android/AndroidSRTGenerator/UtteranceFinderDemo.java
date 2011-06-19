@@ -17,7 +17,6 @@
 package ca.ilanguage.android.AndroidSRTGenerator;
 
 import ca.ilanguage.android.AndroidSRTGenerator.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -39,7 +38,7 @@ import java.util.List;
 public class UtteranceFinderDemo extends Activity implements OnClickListener {
     
     private static final int VOICE_RECOGNITION_REQUEST_CODE = 1234;
-    
+    private static final int GET_SRT_TIMECODES = 1 ;
     private ListView mList;
 
     /**
@@ -68,13 +67,18 @@ public class UtteranceFinderDemo extends Activity implements OnClickListener {
             speakButton.setText("Recognizer not present");
         }
     }
+    
 
     /**
      * Handle the click on the start recognition button.
      */
     public void onClick(View v) {
         if (v.getId() == R.id.btn_speak) {
-            startVoiceRecognitionActivity();
+            //startVoiceRecognitionActivity();
+        	Intent i = new Intent(this, SRTGeneratorActivity.class);
+        	i.putExtra(SRTGeneratorActivity.EXTRA_AUDIOFILE_FULL_PATH, "sample_recorded_in_praat_using_laptop_mic_outdoors_wav.wav");
+        	this.startActivityForResult(i, GET_SRT_TIMECODES);
+    		
         }
     }
 
@@ -94,10 +98,9 @@ public class UtteranceFinderDemo extends Activity implements OnClickListener {
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == VOICE_RECOGNITION_REQUEST_CODE && resultCode == RESULT_OK) {
+        if (requestCode == GET_SRT_TIMECODES && resultCode == RESULT_OK) {
             // Fill the list view with the strings the recognizer thought it could have heard
-            ArrayList<String> matches = data.getStringArrayListExtra(
-                    RecognizerIntent.EXTRA_RESULTS);
+            ArrayList<String> matches = data.getStringArrayListExtra(SRTGeneratorActivity.EXTRA_RESULTS);
             mList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
                     matches));
         }

@@ -1,8 +1,11 @@
 package ca.ilanguage.android.AndroidSRTGenerator;
 
+import java.util.ArrayList;
+
 import com.openlanguage.android.AndroidSRTGenerator.R;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.AudioTrack;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -23,9 +26,10 @@ public class SRTGeneratorActivity extends Activity {
 	private AudioTrack mAudioTrack;
 	private String mAudioFilePath;
 	private int mSplitType;
-	private String[] mTimeCodes;
+	private ArrayList<String> mTimeCodes;
 	
 	public static final String EXTRA_AUDIOFILE_FULL_PATH = "audioFilePath";
+	public static final String EXTRA_RESULTS = "splitUpResults";
 	public static final String EXTRA_SPLIT_TYPE = "splitOn";
 	
 	/**
@@ -73,12 +77,30 @@ public class SRTGeneratorActivity extends Activity {
         /*
          * TODO get data from bundle, store it in the member variables
          */
-        
-        
+        try {
+            mAudioFilePath = getIntent().getExtras().getString(EXTRA_AUDIOFILE_FULL_PATH);
+            if (mAudioFilePath.length() > 0) {
+                this.setTitle(mAudioFilePath);
+            }else{
+            	this.setTitle("default");
+            }
+        } catch (Exception e) {
+        	Toast.makeText(SRTGeneratorActivity.this, "Error "+e,Toast.LENGTH_LONG).show();
+        }
+            
+        /*
+         * Generate the SRT
+         */
         String message = generateSRT();
-        Toast.makeText(SRTGeneratorActivity.this,
-				message,
-				Toast.LENGTH_LONG).show();
+        Toast.makeText(SRTGeneratorActivity.this, message,Toast.LENGTH_LONG).show();
+        
+        /*
+         * Return results
+         */
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra(EXTRA_RESULTS, mTimeCodes);
+        setResult(Activity.RESULT_OK, resultIntent);
+        finish();
     }
     public String generateSRT(){
     	String messageToReturn = "";
@@ -91,16 +113,21 @@ public class SRTGeneratorActivity extends Activity {
     	 * TODO 
     	 * implement switch on mSplitType
     	 */
-    	messageToReturn = splitOnSilence();
+    	switch (mSplitType){
+    		default:
+    			messageToReturn = splitOnSilence();
+    			break;
+    	}
+    	
     	
     	return messageToReturn;
     }
     public String splitOnSilence(){
-    	mTimeCodes = new String[4];
-    	mTimeCodes[0] = "0:00:02.350,0:00:06.690";
-    	mTimeCodes[1] = "0:00:07.980,0:00:12.780";
-    	mTimeCodes[2] = "0:00:14.529,0:00:17.970";
-    	mTimeCodes[3] = "0:00:17.970,0:00:20.599";
+    	mTimeCodes = new ArrayList<String>();
+    	mTimeCodes.add("0:00:02.350,0:00:06.690");
+    	mTimeCodes.add("0:00:07.980,0:00:12.780");
+    	mTimeCodes.add("0:00:14.529,0:00:17.970");
+    	mTimeCodes.add("0:00:17.970,0:00:20.599");
     	return "right now, these are fake timecodes";
     }
     public String testSplitOnSilence(){
