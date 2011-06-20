@@ -347,13 +347,13 @@ implements Serializable, Cloneable
 			{
 				// A portion of data is lost
 				//Marf: Arrays.copy(this.adSample, adCopy, piDesiredSize);
-				this.adSample = Arrays.copyOf(adCopy, piDesiredSize);
+				//this.adSample = Arrays.copyOf(adCopy, piDesiredSize);
 			}
 			else
 			{
 				// Trailing data is junk
 				//Marf:Arrays.copy(this.adSample, adCopy, adCopy.length);
-				this.adSample = Arrays.copyOf(adCopy, adCopy.length);
+				//this.adSample = Arrays.copyOf(adCopy, adCopy.length);
 			}
 		}
 	}
