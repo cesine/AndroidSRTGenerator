@@ -2,7 +2,7 @@ package ca.ilanguage.android.AndroidSRTGenerator;
 
 import java.util.ArrayList;
 
-import com.openlanguage.android.AndroidSRTGenerator.R;
+import ca.ilanguage.android.AndroidSRTGenerator.R;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,6 +18,7 @@ import android.widget.Toast;
  * 		but more fine grained choices are availible through the constants listed below
  * 
  * See also: http://www.zdnet.com/blog/burnette/google-io-mastering-the-android-media-framework/1133
+ * 			 http://developer.android.com/reference/android/media/AudioTrack.html
  * 
  * @author gina
  *
@@ -32,17 +33,20 @@ public class SRTGeneratorActivity extends Activity {
 	public static final String EXTRA_RESULTS = "splitUpResults";
 	public static final String EXTRA_SPLIT_TYPE = "splitOn";
 	
+	//CodRev-SK:these should be refactored into enums
+	//http://download.oracle.com/javase/1,5.0/docs/guide/language/enums.html
+	
 	/**
-	 * Splitting on Silence is relatively quick it only requires mathematic calculation on the audio sample, 
+	 * Splitting on Silence is relatively quick it only requires a mathematical calculation on the audio sample, 
 	 * this is used by default by all other split types.
 	 */
 	public static final int SPLIT_ON_SILENCE = 1;
 	/**
-	 * Subtitles should not exceed a certain length to fit on the screen, use this if you actually have the goal of generating subtitles
+	 * Subtitles should not exceed a certain length to fit on the screen, use this if you want to generate subtitles
 	 */
 	public static final int SPLIT_ON_TOO_MANY_CHARS = 9;
 	/**
-	 * Warning: using prosodic cues requires more audio analysis (fourier transforms FFT) and so they will slow the service down substantially
+	 * Warning: using prosodic cues requires more audio analysis (Fourier transforms FFT and such) and so they will slow the service down substantially
 	 */
 	public static final int SPLIT_ON_ANY_PROSODIC_CUE = 2;
 
