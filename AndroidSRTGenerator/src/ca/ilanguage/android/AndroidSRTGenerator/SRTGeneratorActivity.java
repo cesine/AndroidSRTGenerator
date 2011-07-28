@@ -1,6 +1,11 @@
 package ca.ilanguage.android.AndroidSRTGenerator;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Map;
 
 import ca.ilanguage.android.AndroidSRTGenerator.R;
 
@@ -8,6 +13,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.media.AudioTrack;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 /**
  * Input Bundle: String of audio file path 
@@ -28,8 +34,9 @@ public class SRTGeneratorActivity extends Activity {
 	private String mAudioFilePath;
 	private int mSplitType;
 	private ArrayList<String> mTimeCodes;
+	String file_path;
 	
-	public static final String EXTRA_AUDIOFILE_FULL_PATH = "audioFilePath";
+	public static final String EXTRA_AUDIOFILE_FULL_PATH = "/res/raw/sample_recorded_in_praat_using_laptop_mic_outdoors_wav.wav";
 	public static final String EXTRA_RESULTS = "splitUpResults";
 	public static final String EXTRA_SPLIT_TYPE = "splitOn";
 	
@@ -94,6 +101,7 @@ public class SRTGeneratorActivity extends Activity {
             
         /*
          * Generate the SRT
+         * http://www.matroska.org/technical/specs/subtitles/srt.html
          */
         String message = generateSRT();
         Toast.makeText(SRTGeneratorActivity.this, message,Toast.LENGTH_LONG).show();
@@ -113,27 +121,80 @@ public class SRTGeneratorActivity extends Activity {
     	 * make sure the audioTrack is open
     	 */
 
+    	file_path = "/res/raw/sample_recorded_in_praat_using_laptop_mic_outdoors_wav.wav";
+    	
     	/* 
     	 * TODO 
     	 * implement switch on mSplitType
     	 */
-    	switch (mSplitType){
-    		default:
-    			messageToReturn = splitOnSilence();
-    			break;
-    	}
-    	
-    	
+
+		messageToReturn = splitOnSilence(file_path);
+   	
     	return messageToReturn;
     }
-    public String splitOnSilence(){
+    public String splitOnSilence(String file_path){
+    	
     	mTimeCodes = new ArrayList<String>();
-    	mTimeCodes.add("0:00:02.350,0:00:06.690");
-    	mTimeCodes.add("0:00:07.980,0:00:12.780");
-    	mTimeCodes.add("0:00:14.529,0:00:17.970");
-    	mTimeCodes.add("0:00:17.970,0:00:20.599");
-    	return "right now, these are fake timecodes";
+    	
+    	//open raw/res/wavsample
+    	byte[] byteArray = null;
+    	
+    	FileInputStream file = null;
+   	
+    	try {
+			file = new FileInputStream(file_path);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		short hibyte;
+		short lobyte;
+		int volume;
+		int powersum = 0;
+		int poweravg = 0;
+		int offset = 0;
+		int timestamp;
+				
+		try {
+		/* read 400ms */
+		while(file.read(byteArray, offset, 35280)>0)
+		{
+			/* keep track of where we are in the file/byteArray */
+			offset += 35280;
+			
+			/* calculate time stamp based on where we are in the file
+			(assuming 16bits per sample and 44100Khz sample rate) */
+			timestamp = 1-(offset/byteArray.length);
+			
+			for(int i = 0; i < 35200; i++)
+			{
+				lobyte = byteArray[i];
+				hibyte = byteArray[i+1];
+				volume = (lobyte << 8) | hibyte;
+				powersum += (int) Math.log10(volume);
+			}
+			
+			poweravg = powersum / 35280;
+			
+			if(poweravg < 25)
+			{
+				Log.w("splitonsilence", "power is less than 25db");
+				Log.w("splitonsilence", Integer.toString(timestamp));
+				//save timestamp and avgpower for the 400ms sample
+				mTimeCodes.add(Integer.toString(timestamp));
+			}
+				 
+		}	
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return "message done";
+		
     }
+    
     public String testSplitOnSilence(){
     	/*
     	 * TODO
@@ -143,6 +204,10 @@ public class SRTGeneratorActivity extends Activity {
     	 * compare the output against the raw/res...corrected.sbv time stamps
     	 * return test failed/passed
     	 */
+    
+    	splitOnSilence("/res/raw/sample_recorded_in_praat_using_laptop_mic_outdoors_wav.wav");
+    	
+    	
     	return "fail";
     }
 }

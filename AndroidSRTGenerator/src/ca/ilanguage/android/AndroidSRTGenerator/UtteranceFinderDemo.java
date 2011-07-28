@@ -55,17 +55,6 @@ public class UtteranceFinderDemo extends Activity implements OnClickListener {
         Button speakButton = (Button) findViewById(R.id.btn_speak);
         
         mList = (ListView) findViewById(R.id.list);
-
-        // Check to see if a recognition activity is present
-        PackageManager pm = getPackageManager();
-        List<ResolveInfo> activities = pm.queryIntentActivities(
-                new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH), 0);
-        if (activities.size() != 0) {
-            speakButton.setOnClickListener(this);
-        } else {
-            speakButton.setEnabled(false);
-            speakButton.setText("Recognizer not present");
-        }
     }
     
 
@@ -84,7 +73,7 @@ public class UtteranceFinderDemo extends Activity implements OnClickListener {
 
     /**
      * Fire an intent to start the speech recognition activity.
-     */
+     *
     private void startVoiceRecognitionActivity() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
@@ -92,17 +81,15 @@ public class UtteranceFinderDemo extends Activity implements OnClickListener {
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speech recognition demo");
         startActivityForResult(intent, VOICE_RECOGNITION_REQUEST_CODE);
     }
-
+	*/
     /**
      * Handle the results from the recognition activity.
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == GET_SRT_TIMECODES && resultCode == RESULT_OK) {
-            // Fill the list view with the strings the recognizer thought it could have heard
             ArrayList<String> matches = data.getStringArrayListExtra(SRTGeneratorActivity.EXTRA_RESULTS);
-            mList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
-                    matches));
+            mList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,matches));
         }
 
         super.onActivityResult(requestCode, resultCode, data);
