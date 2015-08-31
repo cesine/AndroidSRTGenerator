@@ -1,10 +1,3 @@
-.project
-.settings
-#.classpath
-
-bin
-gen
-
 # Compiled source #
 ###################
 target
@@ -24,22 +17,46 @@ target
 *.gz
 *.iso
 *.jar
-!android-gdata-1.30.0.jar
-!bursaq-goto.jar
-!libGoogleAnalytics.jar
 *.rar
 *.tar
 *.zip
+*.war
+*.apk
+*.ap_
 
 # Logs and databases #
 ######################
-#*.log
-#*.sql
-#*.sqlite
+*.log
+*.sql
+*.sqlite
+*.db
+*.db-journal
 
 # OS generated files #
 ######################
-.DS_Store?
+.DS_Store
 ehthumbs.db
 Icon?
 Thumbs.db
+
+# Generated files
+bin/
+gen/
+*.dex
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Eclipse files
+proguard/
+.classpath
+.project
+.settings
+
+# Android Studio files
+.navigation/
+.idea
+*.iml
+captures/
